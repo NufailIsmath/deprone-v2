@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DeProNe</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container" style="width: 650px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">DeProNe</h1>
+                <h2 class="text-center">Decentralized Proved News</h2>
+                <hr/>
+                <br/>
+                <div id="loader">
+                    <p class="text-center">Loading...</p>
+                </div>
+                <div class="uploadNewsArticleBtn" data-toggle="modal" href="#myModal">
+                    <p>Upload News Article</p>
+                </div>
+                <div id="content" style="display: none;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Headline</th>
+                                <th scope="col">News Info</th>
+                                <th scope="col">Vote Count</th>
+                                <th scope="col">Vote</th>
+                                <th scope="col">Validity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="newsArticlesResult">
+                        </tbody>
+                    </table>
+                    <hr/>
+                    <p id="userAccountAddress" class="text-center"></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="form-popup" id="myForm">
+  <form class="form-container">
+    <h1>Create News Article</h1>
+
+    <label for="headline"><b>Headline</b></label>
+    <input id="newsHeadline" type="text" placeholder="Enter News Headline" name="headline" required>
+
+    <label for="newsDesc"><b>News Infromation</b></label>
+    <textarea id="newsDescription" name="newsDesc" rows="4" cols="30" required></textarea>
+
+    <button class="btn" onclick="App.publishArticle()">Publish News Article</button>
+    <button type="submit" class="btn cancel" onclick="App.closePopUp()">Cancel</button>
+  </form>
+</div> -->
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Post News Article</h3>
+                    <button type="button" class="close" onclick="App.closePopUp()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="newsHeadline">Headline</label>
+                            <input type="text" class="form-control" id="newsHeadline" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsDescription">New Description</label>
+                            <textarea class="form-control" id="newsDescription" rows="4" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="App.closePopUp()">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="App.publishArticle()">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/ipfs-mini.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
