@@ -10,11 +10,7 @@ contract IPFSHash {
     
     mapping (uint => IPFSHashes) public hashesOfArticle;
     
-    
     uint public hashesOfArticleCount;
-    
-    constructor() public {
-    }
     
     function storeHash(string memory articleHash) public {
         hashesOfArticleCount++;
